@@ -25,7 +25,11 @@ import java.util.List;
 */
 
 @RestController
-@RequestMapping("/store/order")
+@RequestMapping("/order")
+// Раньше было так: @RequestMapping("/store/order"),
+// но так мы в application.properties
+// добавили свойство server.servlet.context-path=/store то здесь эту часть пути /order нужно убрать
+
 public class OrderController {
 
     private final BasketService basketService; // создали поле интерфейса Сервис в Контроллере для того, чтобы потом сделать инъекцию зависимости.
